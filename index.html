@@ -138,16 +138,37 @@
         </p>
         <p>
           <label for="whycontacting">Why Contacting</label>
-          <select name="whycontacting" id="whycontacting">
-            <option value="jobinterview">Job Interview</option>
+          <select id="whycontacting" name="whycontacting">
+            <option value=jobinterview">Job Interview</option>
             <option value="needcontractor">Need Contractor</option>
           </select>
         </p>
         <p>
           <label for="comments">Comments</label>
-          <textarea name="commments" id="comments" cols="30" rows="10"></textarea>
+          <textarea id="comments" name="comments" rows="3"></textarea>
         </p>
-        <button type="submit">Send</button>
+        <fieldset>
+          <legend>Best Contact Time</legend>
+          <p>
+            <label for="contacttime1">Morning</label>
+            <input type="radio" id="contacttime1" name="contacttime" value="morning" />
+          </p>
+          <p>
+            <label for="contacttime2">Afternoon</label>
+            <input type="radio" id="contacttime2" name="contacttime" value="afternoon" />
+          </p>
+          <p>
+            <label for="contacttime3">Evening</label>
+            <input type="radio" id="contacttime3" name="contacttime" value="evening" />
+          </p>
+          <p>
+            <label for="asap">ASAP</label>
+            <input type="checkbox" id="asap" name="asap" />
+          </p>
+        </fieldset>
+        <p>
+          <button type="submit">Send</button>
+        </p>
       </form>
     </section>
   </main>
