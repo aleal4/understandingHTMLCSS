@@ -4,14 +4,34 @@
 
 body {
   font-size: 16px;
+  writing-mode: vertical-lr;
+  direction: rtl;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 .25rem;
+  line-height: 1.5rem;
 }
 
 main {
-  max-width: 700px;
+  max-width: clamp(700px, 50%, 900px);
   padding: 0 2rem;
   border-left: solid 2px black;
   border-right: solid 2px black;
   margin: 0 auto;
+}
+
+#aboutme {
+  background-color: black;
+  color: white;
+  display: flow-root;
 }
 
 #testimonials blockquote {
@@ -28,4 +48,19 @@ main {
 
 .resume-fieldset legend {
   padding: 0;
+}
+
+.label-standard {
+  display: block;
+  margin: 0.125rem;
+}
+
+.field {
+  margin-bottom: 1.25rem;
+}
+
+.my-picture {
+  float: left;
+  max-width: 75px;
+  margin-right: 1rem;
 }
