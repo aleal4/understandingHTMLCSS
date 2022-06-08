@@ -4,17 +4,23 @@
 
 body {
   font-size: 16px;
+  display: grid;
+  margin-inline: 0;
+  margin-block: 0;
 }
 
 nav {
   position: sticky;
   inset-inline-start: 0;
   background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul {
   display: flex;
-  margin-inline: 0;
+  flex-wrap: wrap;
+  padding-inline: 0;
 }
 
 nav ul li {
@@ -25,23 +31,80 @@ nav ul li {
 }
 
 main {
-  max-inline-size: clamp(700px, 50%, 900px);
-  padding-inline: 2rem;
   padding-block: 0;
-  border-inline-start: solid 2px black;
-  border-inline-end: solid 2px black;
-  margin-inline: auto;
   margin-block: 0;
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+}
+
+main>* {
+  grid-column: 2;
+}
+
+.full-bleed {
+  grid-column: 1 / span 3;
+  padding-inline: 2rem;
+}
+
+.flex-header,
+.motto,
+#aboutme footer {
+  flex-basis: 100%;
 }
 
 #aboutme {
   background-color: black;
   color: white;
   display: flex;
+  flex-wrap: wrap;
+}
+
+#aboutme h2 {
+  color: white;
+}
+
+#aboutme footer {
+  text-align: center;
+}
+
+#aboutme footer a,
+#aboutme footer a:visited,
+#aboutme footer a:hover {
+  color: white;
+}
+
+#aboutme aside {
+  order: 10;
+  text-align: center;
+}
+
+#portfolio {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+  grid-template-areas: "portfolio anchor img1 img2 img3"
+    "portfolio anchor img4 img5 img6";
+  grid-gap: 10px;
+  align-items: end;
+}
+
+#portfolio h2 {
+  grid-area: portfolio;
+  align-self: start;
+  margin-block: 0;
+}
+
+#portfolio img {
+  max-inline-size: 100%;
+}
+
+img.anchor {
+  grid-area: anchor;
+  align-self: start;
 }
 
 #testimonials {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row-reverse;
 }
 
@@ -52,6 +115,15 @@ main {
   padding-block: 0;
   margin-inline: 0;
   margin-block: 0.5rem;
+}
+
+#testimonials h2 {
+  order: -2;
+}
+
+blockquote.featured {
+  order: -1;
+  flex: 1 0 auto;
 }
 
 .resume-fieldset {
